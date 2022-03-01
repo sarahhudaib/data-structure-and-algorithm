@@ -13,5 +13,5 @@ Without utilizing any of the built-in methods available to your language, return
 * Using slice notation we can just go to the last item easily by entering -1 [ : : -1]
 
 ### What is the Big O space/time for this approach? 
-     Big O ==> O(1)
-> **why? there is no loops in the code :)**
+     Big O --> Time O(n)  Space O(1)
+
