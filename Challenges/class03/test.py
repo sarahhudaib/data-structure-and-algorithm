@@ -1,28 +1,22 @@
-def binary_search(arr, value):
-    left = 0
-    right = len(arr)
-   
-    if len(arr) > 0:
-        while left <= right:
-            mid = (left + right) //2
-        
-            if arr[mid] == value:
-                print(mid)
-                return mid
-        
-            if arr[mid] < value:
-                left = mid
-            
-            if arr[mid] > value:
-                right = mid
-            if value> len(arr) or value < 0:        
-                print('not required')
-                return -1
+def binary_search(array, value):
+    l = 0
+    h = len(array) - 1
+
+    while (l <= h):
+        m = (l + h) // 2
+        if (array[m] == value):
+            return m
+        elif (array[m] < value):
+            l = m + 1
+        else:
+            h = m - 1
+
+    return -1
 
     
 if __name__ == '__main__':
-    arr= [1, 2, 3, 4, 5, 6, 7, 8]
-    value= -10
+    arr= [1, 2, 3, 4, 5]
+    value= 5
     print(binary_search(arr,value))  
     
 """
