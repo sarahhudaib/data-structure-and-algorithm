@@ -6,26 +6,30 @@ class Node():
 class LinkedList():
     def __init__(self):
         self.head = None
+   
+    def ToString(self):
+        return self.__str__()
         
-    def append(self, value):
-        new_node = Node(value)
-        if not self.head:
-            self.head = new_node
-        else:
-            current = self.head
-            while current.next:
-                current = current.next
-            current.next = new_node
+    def append(self,values):
+            if values == '':
+                raise TypeError('Node must not be empty')
+            else:
+                
+                if self.head is None:
+                    self.head = values
+                
+                else:
+                    current = self.head
+                    while current.next is not None:
+                        current = current.next
+                    current.next = values
       
-    def insert(self, value):
-        newNode = Node(value)
-        if(self.head):
-            current = self.head
-            while(current.next):
-                current = current.next
-            current.next = newNode
+    def insert(self, new_node):
+        if new_node == '':
+            raise TypeError('Node must not be empty')
         else:
-            self.head = newNode
+            new_node.next = self.head
+            self.head = new_node
        
     def includes(self, value):
         if value is None:
@@ -55,13 +59,16 @@ class LinkedList():
 
 if __name__=="__main__":
     ll = LinkedList()
-    ll.append('Sarah')
-    ll.append('Ahmad')
-    ll.append('Hudaib')
+    sarah = Node("Sarah")
+    ahmad = Node("Ahmad")
+    Hudaib = Node("Hudaib")
+    ll.append(sarah)
+    ll.insert(ahmad)
+    ll.append(Hudaib)
     print(ll)
       
     print (ll.includes('Sarah'))
     print (ll.includes('ZZZZZ'))
-    print (ll.includes())
+    # print (ll.includes())
 
 
