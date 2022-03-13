@@ -11,3 +11,4 @@
 | Code  | Title  | Link  |
 |:-:|:-:|:-:|
 | Class 05  | Linked List Implementation  | [Link](./data_structuers/linked_list/linked_list.md)  |
+| Class 06  | Extending an Implementation  | [Link](./data_structuers/linked_list/linked_list.md)  |
