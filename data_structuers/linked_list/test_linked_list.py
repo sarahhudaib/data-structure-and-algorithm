@@ -76,7 +76,6 @@ def test_add_multiple_nodes_to_the_end():
     assert ll.head.value == 'Sarah'
     assert ll.head.next.value == 'Ahmad'
 
-
 def test_insert_before_node_located_middle():
     ll = LinkedList()
     sarah = Node("Sarah")
@@ -101,8 +100,8 @@ def test_insert_after_node_in_the_middle():
     ll.append(sarah)
     ll.append(ahmad)
     ll.append(hudaib)
-    ll.insert_after("Ahmad", 10000)
-    assert ll.head.next.next.value == 10000   
+    ll.insert_after("Ahmad", 10001)
+    assert ll.head.next.next.value == 10001   
 
 def test_insert_after_last_in_the_linked_list():
     ll = LinkedList()
@@ -112,5 +111,5 @@ def test_insert_after_last_in_the_linked_list():
     ll.append(sarah)
     ll.append(ahmad)
     ll.append(hudaib)
-    ll.insert_after("Hudaib", 10000)
-    assert ll.head.next.next.next.value == 10000
+    ll.insert_after("Hudaib", 10002)
+    assert ll.head.next.next.next.value == 10002

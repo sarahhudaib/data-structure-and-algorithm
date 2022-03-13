@@ -58,7 +58,8 @@ class LinkedList():
                 current.next = values
                     
     def insert_before(self, value, new_val):
-            '''Add a new node with  newVal before the first value node'''
+            ''' method that takes 2 arguments value and new value & adds a new node 
+with the given new value immediately before the first node that has the value specified'''
             node = Node(new_val)
             current = self.head
             while current:
@@ -74,9 +75,11 @@ class LinkedList():
                     current = current.next
             raise ValueError(f'{value} not found')
         
-    def insert_after(self, value, new_val):
-        '''Add a new node with newVal after the first value node'''
-        node = Node(new_val)
+    def insert_after(self, value, new_value):
+        '''method that takes 2 arguments value and new value and arguments: 
+value, new value adds a new node with the given new value immediately after 
+the first node that has the value specified'''
+        node = Node(new_value)
         current = self.head
         while current:
             if current.value == value:
@@ -88,19 +91,17 @@ class LinkedList():
                 
 if __name__=="__main__":
     pass
-    # ll = LinkedList()
-    # sarah = Node("Sarah")
-    # ahmad = Node("Ahmad")
-    # Hudaib = Node("Hudaib")
-    # ll.append(sarah)
-    # ll.insert(ahmad)
-    # ll.append(Hudaib)
-    # print(ll)
+    ll = LinkedList()
+    sarah = Node("Sarah")
+    ahmad = Node("Ahmad")
+    Hudaib = Node("Hudaib")
+    ll.append(sarah)
+    ll.insert(ahmad)
+    ll.insert(Hudaib)
+    print(ll)
       
     # print (ll.includes('Sarah'))
     # print (ll.includes('ZZZZZ'))
-    # # print (ll.includes())
-    
-    # print(ll.insert_after(Hudaib,"zzzz"))
-
-
+    print(ll.insert_after("Ahmad", 10001))    
+    print(ll.insert_before("Sarah", 10002))
+    print(ll)
