@@ -15,7 +15,9 @@ Create a Node class that has properties for the value stored in the Node, and a 
 - adds `insert()` method that can add a new node with given data
 ll-insertions
 - adds `append()` method that takes in a value and adds it to the end of the list
-
+- adds `insert_before()` method that takes 2 arguments value and new value & adds a new node with the given new value immediately before the first node that has the value specified
+- adds `insert_after()` method that takes 2 arguments value and new value and 
+arguments: value, new value adds a new node with the given new value immediately after the first node that has the value specified
 
 ## Approach & Efficiency
 - space & time are considered as a O(n)
