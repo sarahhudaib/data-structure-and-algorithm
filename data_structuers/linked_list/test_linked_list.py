@@ -1,4 +1,5 @@
 from linked_list import LinkedList, Node 
+import pytest
 
 def test_list_creation():
   actual = LinkedList()
@@ -113,3 +114,54 @@ def test_insert_after_last_in_the_linked_list():
     ll.append(hudaib)
     ll.insert_after("Hudaib", 10002)
     assert ll.head.next.next.next.value == 10002
+    
+  # ----------------------------kth_from_end() method tests--------------------------------
+
+# “Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+def test_kth_greater_than_the_list():
+    ll = LinkedList()
+    ll.append(Node(10))
+    ll.append(Node(20))
+    ll.append(Node(30))
+    ll.append(Node(40))
+    expected = "k not in the range"
+    actual =ll.kth_from_end(6)
+    assert expected == actual
+        
+def test_the_linked_list_size_is_one():
+    ll = LinkedList()
+    ll.append(Node(10))
+    expected = 10
+    actual =ll.kth_from_end(0)
+    assert expected == actual
+    
+def test_kth_is_negative_int():
+    ll = LinkedList()
+    ll.append(Node(10))
+    ll.append(Node(20))
+    ll.append(Node(30))
+    ll.append(Node(40))
+    expected = "k not in the range"
+    actual =ll.kth_from_end(-2)
+    assert expected 
+    
+def test_kth_and_ll_are_the_same():
+    ll = LinkedList()
+    ll.append(Node(10))
+    ll.append(Node(20))
+    ll.append(Node(30))
+    ll.append(Node(40))
+    expected = 40
+    actual =ll.kth_from_end(0)
+    assert expected == actual
+    
+def test_happy_path():
+    ll = LinkedList()
+    ll.append(Node('Sarah'))
+    ll.append(Node('Ahmad'))
+    ll.append(Node('Mohammad'))
+    ll.append(Node('Hudaib'))
+    assert ll.kth_from_end(2) == 'Ahmad'
+
+
+
