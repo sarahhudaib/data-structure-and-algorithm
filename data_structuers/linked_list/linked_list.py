@@ -88,20 +88,38 @@ the first node that has the value specified'''
                 return
             current = current.next
         raise ValueError(f'{value} not found')
-                
-if __name__=="__main__":
-    pass
-    ll = LinkedList()
-    sarah = Node("Sarah")
-    ahmad = Node("Ahmad")
-    Hudaib = Node("Hudaib")
-    ll.append(sarah)
-    ll.insert(ahmad)
-    ll.insert(Hudaib)
-    print(ll)
-      
-    # print (ll.includes('Sarah'))
-    # print (ll.includes('ZZZZZ'))
-    print(ll.insert_after("Ahmad", 10001))    
-    print(ll.insert_before("Sarah", 10002))
-    print(ll)
+   
+    def length_(self):
+        """length method will help to determine the length of 
+        the list to use it in the kth_form_end() func """
+        length = 0
+        current = self.head
+        while current:
+            length+=1
+            current = current.next
+        return length
+    
+    def kth_from_end(self, k):
+        """kth from end
+        argument: a number, k, as a parameter.
+        Return the node’s value that is k places from the tail of the linked list.
+        You have access to the Node class and all the properties on the Linked List class as well as 
+        the methods created in previous challenges."""
+
+        length = self.length_()
+        if not -length <= k < length:
+            return ("k not in the range")
+        next_node = None
+        if k >= 0:
+            next_node = length -k -1
+        if k < 0:
+            next_node = k-1
+        current = self.head
+        #"we don't care about the iterator value, just that it should run some specific number of times"
+        for _ in range(next_node):
+            """When you are not interested in some values returned by a function we use underscore in place 
+            of variable name . Basically it means you are not interested in how many times the loop 
+            is run till now just that it should run some specific number of times overall."""
+            current = current.next
+        return current.value
+
