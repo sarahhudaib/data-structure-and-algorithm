@@ -29,3 +29,6 @@ arguments: value, new value adds a new node with the given new value immediately
 
 ![alt text](./assets/ll1.jpg "09")
 ![alt text](./assets/ll2.jpg "09")
+
+## Adding `kth_from_end() method`
+![alt text](./assets/ll3.jpg "09")

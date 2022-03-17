@@ -46,11 +46,9 @@ class LinkedList():
         ''' takes in a value and adds it to the end of the list '''
         if values == '':
             raise TypeError('Node must not be empty')
-        else:
-            
+        else:            
             if self.head is None:
                 self.head = values
-            
             else:
                 current = self.head
                 while current.next is not None:
@@ -105,7 +103,7 @@ the first node that has the value specified'''
         Return the node’s value that is k places from the tail of the linked list.
         You have access to the Node class and all the properties on the Linked List class as well as 
         the methods created in previous challenges."""
-
+        
         length = self.length_()
         if not -length <= k < length:
             return ("k not in the range")
