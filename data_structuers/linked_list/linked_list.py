@@ -134,15 +134,16 @@ the first node that has the value specified'''
 
         if linked_list_one is None:
             return linked_list_two
-
+        
         if linked_list_two is None:
             return linked_list_one
-        
+        # it turns out to be convenient to do the recursive call first;
+        # otherwise, `a.next` and `b.next` need temporary storage
         recur = LinkedList.zip_lists(linked_list_one.next, linked_list_two.next)
 
-        result = linked_list_one      
-        linked_list_one.next = linked_list_two       
-        linked_list_two.next = recur      
+        result = linked_list_one # one node from linked_list_one      
+        linked_list_one.next = linked_list_two  # one node from linked_list_two     
+        linked_list_two.next = recur  # the rest on the lsit    
 
         return result
 """The time complexity of all above-discussed methods is O(m + n),
@@ -153,20 +154,21 @@ but is probably not appropriate for production code since it uses stack space
 proportionate to the lists’ lengths."""
  
 """https://stackoverflow.com/questions/58290943/iteratively-recursively-create-a-linked-list """
+"""http://cslibrary.stanford.edu/105/LinkedListProblems.pdf"""
 
 if __name__ == '__main__':
     linked_list_one = linked_list_two = None
-    for i in reversed(range(1, 8, 2)):
+    for i in reversed(range(1, 10, 2)):
         linked_list_one = Node(i, linked_list_one)
  
-    for i in reversed(range(2, 8, 2)):
+    for i in reversed(range(2, 10, 2)):
         linked_list_two = Node(i, linked_list_two)
 
     LinkedList.ToString2('linked_list_one: ', linked_list_one)
     LinkedList.ToString2('linked_list_two: ', linked_list_two)
  
-    x = LinkedList.zip_lists(linked_list_one, linked_list_two)
-    LinkedList.ToString2('\nAfter Merge: ', x)
+    head = LinkedList.zip_lists(linked_list_one, linked_list_two)
+    LinkedList.ToString2('\nAfter Merge: ', head)
             
 
  

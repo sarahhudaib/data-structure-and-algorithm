@@ -19,6 +19,7 @@ ll-insertions
 - adds `insert_after()` method that takes 2 arguments value and new value and 
 arguments: value, new value adds a new node with the given new value immediately after the first node that has the value specified
 - adds `kth_from_end()` method that takes argument: a number, k, as a parameter. And return the node’s value that is k places from the tail of the linked list.
+- adds `zip_lists()` method that takes 2 arguments which are 2 linked lists and return new Linked List, zipped 
 
 
 ## Approach & Efficiency
@@ -32,3 +33,6 @@ arguments: value, new value adds a new node with the given new value immediately
 
 ## Adding `kth_from_end() method`
 ![alt text](./assets/ll3.jpg "09")
+
+## Adding `zip_lists() method`
+![alt text](./assets/ll4.jpg "10")
