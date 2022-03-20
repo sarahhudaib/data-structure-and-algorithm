@@ -164,25 +164,32 @@ def test_happy_path():
     assert ll.kth_from_end(2) == 'Ahmad' 
 
   # ----------------------------zip_lists() method tests--------------------------------
-linked_list_one = linked_list_two = None
-for i in reversed(range(1, 8, 2)):
-      linked_list_one = Node(i, linked_list_one)
-
-for i in reversed(range(2, 8, 2)):
-      linked_list_two = Node(i, linked_list_two)
-      
+            
 def test_zip_lists():
-  ll = LinkedList()
-  actual =ll.zip_lists(linked_list_one, linked_list_two)
-  expected = 'After Merge: 1 —> 2 —> 3 —> 4 —> 5 —> 6 —> 7 —> None'
-  assert expected == actual
-  
-# def test_insert_method():
-#   list_insert = LinkedList()
-#   list_insert.insert(Node(1))
-#   list_insert.insert(Node(2))
-#   list_insert.insert(Node(3))
+    linked_list_one = linked_list_two = None
+    for i in reversed(range(1, 10, 2)):
+        linked_list_one = Node(i, linked_list_one)
+ 
+    for i in reversed(range(2, 10, 2)):
+        linked_list_two = Node(i, linked_list_two)
 
-#   expected = 'After Merge: 1 —> 2 —> 3 —> 4 —> 5 —> 6 —> 7 —> None'
-#   actual = list_insert.ToString()
-#   assert expected == actual
+    LinkedList.ToString2('linked_list_one: ', linked_list_one)
+    LinkedList.ToString2('linked_list_two: ', linked_list_two)
+ 
+    head=LinkedList.zip_lists(linked_list_one, linked_list_two)
+    LinkedList.ToString2('\nAfter Merge: ', head)
+    expected = 'After Merge: 1 —> 2 —> 3 —> 4 —> 5 —> 6 —> 7 —> None'
+    actual = LinkedList.zip_lists(linked_list_one, linked_list_two)
+    assert expected == actual
+  
+def test_to_string_method():
+  list_str = LinkedList()
+  list_str.insert(Node(1))
+  list_str.append(Node(2))
+  list_str.append(Node(3))
+  list_str.append(Node(4))
+  list_str.append(Node(5))
+
+  actual = list_str.__str__()
+  expected = '  Head-->  1->  2->  3->  4->  5->  None'
+  assert actual == expected
