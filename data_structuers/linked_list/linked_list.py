@@ -1,8 +1,10 @@
 class Node():
-    def __init__(self, value):
+    def __init__(self, value=None,next=None):
         self.value = value
-        self.next = None
-                    
+        self.next = next
+        
+
+                       
 class LinkedList():
     def __init__(self):
         self.head = None
@@ -119,3 +121,52 @@ the first node that has the value specified'''
             current = current.next
         return current.value
 
+    def ToString2(msg, head):
+        """toString func takes 1 argument so i created this simmiler func to handle both of the linked list"""
+        print(msg, end='')
+        ptr = head
+        while ptr:
+            print(ptr.value, end=' —> ')
+            ptr = ptr.next
+        print('None')
+    
+    def zip_lists(linked_list_one, linked_list_two):
+
+        if linked_list_one is None:
+            return linked_list_two
+
+        if linked_list_two is None:
+            return linked_list_one
+        
+        recur = LinkedList.zip_lists(linked_list_one.next, linked_list_two.next)
+
+        result = linked_list_one      
+        linked_list_one.next = linked_list_two       
+        linked_list_two.next = recur      
+
+        return result
+"""The time complexity of all above-discussed methods is O(m + n),
+where m and n are the total number of nodes in the first and second list, respectively."""
+
+"""The recursive solution is the most compact of all 
+but is probably not appropriate for production code since it uses stack space 
+proportionate to the lists’ lengths."""
+ 
+"""https://stackoverflow.com/questions/58290943/iteratively-recursively-create-a-linked-list """
+
+if __name__ == '__main__':
+    linked_list_one = linked_list_two = None
+    for i in reversed(range(1, 8, 2)):
+        linked_list_one = Node(i, linked_list_one)
+ 
+    for i in reversed(range(2, 8, 2)):
+        linked_list_two = Node(i, linked_list_two)
+
+    LinkedList.ToString2('linked_list_one: ', linked_list_one)
+    LinkedList.ToString2('linked_list_two: ', linked_list_two)
+ 
+    x = LinkedList.zip_lists(linked_list_one, linked_list_two)
+    LinkedList.ToString2('\nAfter Merge: ', x)
+            
+
+ 
