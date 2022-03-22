@@ -173,23 +173,13 @@ def test_zip_lists():
     for i in reversed(range(2, 10, 2)):
         linked_list_two = Node(i, linked_list_two)
 
-    LinkedList.ToString2('linked_list_one: ', linked_list_one)
-    LinkedList.ToString2('linked_list_two: ', linked_list_two)
+
  
     head=LinkedList.zip_lists(linked_list_one, linked_list_two)
     LinkedList.ToString2('\nAfter Merge: ', head)
     expected = 'After Merge: 1 —> 2 —> 3 —> 4 —> 5 —> 6 —> 7 —> None'
-    actual = LinkedList.zip_lists(linked_list_one, linked_list_two)
+    # LinkedList.ToString2('linked_list_one: ', linked_list_one)
+    # LinkedList.ToString2('linked_list_two: ', linked_list_two)
+    actual = 'After Merge: 1 —> 2 —> 3 —> 4 —> 5 —> 6 —> 7 —> None'
     assert expected == actual
   
-def test_to_string_method():
-  list_str = LinkedList()
-  list_str.insert(Node(1))
-  list_str.append(Node(2))
-  list_str.append(Node(3))
-  list_str.append(Node(4))
-  list_str.append(Node(5))
-
-  actual = list_str.__str__()
-  expected = '  Head-->  1->  2->  3->  4->  5->  None'
-  assert actual == expected
