@@ -4,5 +4,6 @@
         "alist",
         "curr",
         "llist"
-    ]
+    ],
+    "python.formatting.provider": "yapf"
 }
