@@ -34,9 +34,7 @@ Queues
 -	dequeue `O(1)` pop remove the first item  
 -	Peek `O(1)` what is the first item that’s going to come up
 
-## Whiteboard 
 
-![alt text](./assets/ll1.jpg "09")
 
 
 

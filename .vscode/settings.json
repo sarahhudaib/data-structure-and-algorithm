@@ -1,9 +1,4 @@
 {
-    "cSpell.words": [
-        "akey",
-        "alist",
-        "curr",
-        "llist"
-    ],
-    "python.formatting.provider": "yapf"
+  "cSpell.words": ["akey", "alist", "curr", "ispalin", "ispalindrome", "llist"],
+  "python.formatting.provider": "yapf"
 }
