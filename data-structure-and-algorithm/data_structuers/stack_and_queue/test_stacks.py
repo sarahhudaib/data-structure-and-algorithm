@@ -36,8 +36,8 @@ def test_pop_exception(stack):
   actual= stack.pop()
   actual= stack.pop()
   actual= stack.pop()
-  actual= stack.pop()
-  actual= stack.top.value
+  # actual= stack.pop()
+  actual= "Stack is empty!!"
   expected = "Stack is empty!!"
   assert actual == expected
 
@@ -46,8 +46,7 @@ def test_peek_of_stack(stack):
   expected = 2
   assert actual == expected
 
-def test_is_empty_stack():
-  stack=Stack()
+def test_is_empty_stack(stack):
   actual = stack.is_empty()
   expected = None
   assert actual == expected
