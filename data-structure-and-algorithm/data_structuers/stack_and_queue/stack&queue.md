@@ -40,9 +40,8 @@ Queues
 ![alt text](./assets/queues.jpg "queues")
 ### Stacks
 ![alt text](./assets/stacks.jpg "stacks")
-
-
-
+### stack_queue_pseudo
+![alt text](./assets/stack_queue_pseudo.jpg "stack_queue_pseudo")
 
 
 
