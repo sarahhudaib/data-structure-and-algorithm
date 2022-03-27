@@ -21,7 +21,7 @@ def test_push_multiple_values(stack):
   
 def test_pop(stack):
   actual= stack.pop()
-  expected =2
+  expected =None
   assert actual == expected
   
 def test_pop_empty_stack(stack):
