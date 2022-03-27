@@ -35,7 +35,11 @@ Queues
 -	Peek `O(1)` what is the first item that’s going to come up
 
 
-
+## Whiteboard 
+### Queues
+![alt text](./assets/queues.jpg "queues")
+### Stacks
+![alt text](./assets/stacks.jpg "stacks")
 
 
 
