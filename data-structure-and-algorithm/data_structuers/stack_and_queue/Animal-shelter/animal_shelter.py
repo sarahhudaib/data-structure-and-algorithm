@@ -106,6 +106,8 @@ class Dog():
 
 
 class AnimalShelter(Queue):
+    """The class AnimalShelter holds only dogs and cats. 
+    The shelter operates using a first-in, first-out approach."""
     def __init__(self):
 
         self.front = None
@@ -113,6 +115,7 @@ class AnimalShelter(Queue):
         self.length = 0
 
     def enqueueDC(self, animal):
+        """Adds a new animal to the shelter"""
         if animal == None:
             print('No animal to add !!!! you just wasted your time for nothing!!!')
             return None
@@ -132,6 +135,7 @@ class AnimalShelter(Queue):
             return None
 
     def dequeueDC(self, pref=None):
+        """ returns either a dog or a cat. If pref is not "dog" or "cat" then return null """
 
         if pref == None:
             removed = self.dequeue()
