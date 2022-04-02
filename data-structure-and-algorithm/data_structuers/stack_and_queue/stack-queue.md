@@ -36,14 +36,20 @@ Queues
 
 
 ## Whiteboard 
+
 ### Queues
 ![alt text](./assets/queues.jpg "queues")
+
+
 ### Stacks
 ![alt text](./assets/stacks.jpg "stacks")
+
+
 ### stack_queue_pseudo
 ![alt text](./assets/stack_queue_pseudo.jpg "stack_queue_pseudo")
 
 
-
+### Animal_Shelter
+![alt text](./assets/Animal_Shelter.jpg "Animal_Shelter")
 
 
