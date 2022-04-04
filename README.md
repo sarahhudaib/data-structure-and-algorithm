@@ -16,4 +16,6 @@
 | Class 08  | adds zip_lists() method  | [Link](data-structure-and-algorithm/data_structuers/linked_list/linked_list.md)  |
 | Class 09  | Stacks and Queues  | [Link](data-structure-and-algorithm/data_structuers/stack_and_queue/stack-queue.md)  |
 | Class 10  | Animal_Shelter  | [Link](data-structure-and-algorithm/data_structuers/stack_and_queue/stack-queue.md)  |
+| Class 13  | Stack_Queue_Brackets  | [Link](data-structure-and-algorithm/data_structuers/stack_and_queue/stack-queue-brackets/README.md)  |
+
 
