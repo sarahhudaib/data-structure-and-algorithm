@@ -26,8 +26,6 @@ class StackWithMax:
         self.mainStack.pop()
         self.trackStack.pop()
 
-
-# Driver Code
 if __name__ == '__main__':
 
     s = StackWithMax()
@@ -36,4 +34,6 @@ if __name__ == '__main__':
     s.push(75)
     s.push(10)
     s.push(50)
+    s.push(75)
+    
     print(s.getMax())
