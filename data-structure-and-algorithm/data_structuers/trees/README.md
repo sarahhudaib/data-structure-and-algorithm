@@ -28,8 +28,11 @@ Stacks
 
 ## Whiteboard 
 
-### Binary search tree
+### Binary tree
 ![alt text](./bst.jpg "Binary search tree")
+
+### Binary search tree
+![alt text](./bst2.jpg "Binary search tree")
 
 
 
