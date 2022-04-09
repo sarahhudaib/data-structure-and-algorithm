@@ -26,8 +26,6 @@ Stacks
 
 
 
-
-
 ## Whiteboard 
 
 ### Binary search tree
