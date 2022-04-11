@@ -32,6 +32,8 @@ Create a Binary Tree class with methods pre_order, in_order and post_order Creat
 ### Binary search tree
 ![alt text](./bst2.jpg "Binary search tree")
 
+### Find Max Binary Tree
+![alt text](./BT_MAX.jpg "Binary search tree")
 
 
 
