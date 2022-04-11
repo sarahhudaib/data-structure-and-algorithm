@@ -11,9 +11,8 @@ class Node:
 class BinaryTree:
     """Class to create a binary tree"""
 
-    def __init__(self, value= None):
+    def __init__(self, value=None):
         self.root = None
-      
 
     def pre_order(self, node=None, array_tree=None):
         """Recursive function to perform preorder traversal on the tree
@@ -76,10 +75,9 @@ class BinaryTree:
 
     def findMax(self):
         """ Finds the maximum value in a binary tree """
-        return self.pre_order(self.root)[-1] # will return the last element in the list of pre_order    
+        return self.pre_order(self.root)[-1]  # will return the last element in the list of pre_order
 
 
-            
 class BinarySearchTree(BinaryTree):
     """Class to create a Binary Search Tree """
 
@@ -153,5 +151,6 @@ if __name__ == '__main__':
     tree.add(55)
     tree.add(77)
     tree.add(2)
-    # print(tree.findMax())
-    print (tree.pre_order()) # [88, 11, 13, -25, 2, 17, 19, 23, 55, 77, 99, 102]
+    print(tree.findMax())
+    # [88, 11, 13, -25, 2, 17, 19, 23, 55, 77, 99, 102]
+    print(tree.pre_order())
