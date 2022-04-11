@@ -59,9 +59,10 @@ def test_contains_false(test_BST):
     """Can successfully return false for a value in the tree"""
     assert test_BST.contains(9) == False
 
-#------------------------------------------------
+# ------------------------------------------------
 
-def test_find_max():    
+
+def test_find_max():
     """Can successfully return the maximum value in the tree"""
     tree = BinarySearchTree()
     tree.add(88)
@@ -76,10 +77,11 @@ def test_find_max():
     tree.add(55)
     tree.add(77)
     tree.add(2)
-    
+
     actual = tree.findMax()
     Expected = 102
     assert actual == Expected
+
 
 @pytest.fixture
 def test_BST():
