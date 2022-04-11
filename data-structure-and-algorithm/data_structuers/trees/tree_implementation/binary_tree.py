@@ -8,59 +8,12 @@ class Node:
         self.next = None
 
 
-class Queue:
-    """class Queue which implements Queue data structure with its common methods"""
-
-    def __init__(self):
-        """Initiate class"""
-
-        self.front = None
-        self.rear = None
-
-    def is_empty(self):
-        """method to check if Queue is empty"""
-
-        if self.front == None:
-            return True
-        return False
-
-    def enqueue(self, node):
-        """Method that takes any value as an argument and adds a new node with that value to the back of the queue """
-
-        new_node = node
-
-        if self.is_empty():
-            self.front = new_node
-            self.rear = new_node
-        else:
-            self.rear.next = new_node
-            self.rear = new_node
-
-    def dequeue(self):
-        """Method that removes the node from the front of the queue, and returns the node’s value."""
-
-        if not self.is_empty():
-            temp = self.front
-            self.front = self.front.next
-            temp.next = None
-            return temp
-        else:
-            return None
-
-    def peek(self):
-        """Method that returns the value of the node located in the front of the queue, 
-        without removing it from the queue."""
-
-        if not self.is_empty():
-            return self.front.value
-        return None
-
-
 class BinaryTree:
     """Class to create a binary tree"""
 
-    def __init__(self):
+    def __init__(self, value= None):
         self.root = None
+      
 
     def pre_order(self, node=None, array_tree=None):
         """Recursive function to perform preorder traversal on the tree
@@ -121,7 +74,12 @@ class BinaryTree:
 
         return array_tree
 
+    def findMax(self):
+        """ Finds the maximum value in a binary tree """
+        return self.pre_order(self.root)[-1] # will return the last element in the list of pre_order    
 
+
+            
 class BinarySearchTree(BinaryTree):
     """Class to create a Binary Search Tree """
 
@@ -179,3 +137,21 @@ class myException(Exception):
 
     def __str__(self):
         return self.message
+
+
+if __name__ == '__main__':
+    tree = BinarySearchTree()
+    tree.add(88)
+    tree.add(11)
+    tree.add(13)
+    tree.add(99)
+    tree.add(-25)
+    tree.add(102)
+    tree.add(19)
+    tree.add(17)
+    tree.add(23)
+    tree.add(55)
+    tree.add(77)
+    tree.add(2)
+    # print(tree.findMax())
+    print (tree.pre_order()) # [88, 11, 13, -25, 2, 17, 19, 23, 55, 77, 99, 102]
