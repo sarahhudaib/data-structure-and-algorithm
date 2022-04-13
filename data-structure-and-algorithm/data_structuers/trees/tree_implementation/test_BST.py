@@ -1,7 +1,6 @@
 from binary_tree import BinaryTree, BinarySearchTree
 import pytest
 
-
 def test_tree_instance():
     """Can successfully instantiate an empty tree"""
     tree = BinaryTree()
@@ -58,29 +57,6 @@ def test_contains_true(test_BST):
 def test_contains_false(test_BST):
     """Can successfully return false for a value in the tree"""
     assert test_BST.contains(9) == False
-
-# ------------------------------------------------
-
-
-def test_find_max():
-    """Can successfully return the maximum value in the tree"""
-    tree = BinarySearchTree()
-    tree.add(88)
-    tree.add(11)
-    tree.add(13)
-    tree.add(99)
-    tree.add(-25)
-    tree.add(102)
-    tree.add(19)
-    tree.add(17)
-    tree.add(23)
-    tree.add(55)
-    tree.add(77)
-    tree.add(2)
-
-    actual = tree.findMax()
-    Expected = 102
-    assert actual == Expected
 
 
 @pytest.fixture
