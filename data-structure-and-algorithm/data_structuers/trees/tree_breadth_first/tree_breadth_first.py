@@ -1,174 +1,115 @@
-class Node:
-    """Private class to create a nodes for the tree"""
-    def __init__(self, value):
+from collections import deque # double ended queue (deque) is a data structure that supports the FIFO (first in first out)
+
+class _Node:
+    """ Class that represents a node in a binary tree. """
+
+    def __init__(self, value, left=None, right=None):
         self.value = value
-        self.left = None
-        self.right = None
-        self.next = None
+        self.left = left
+        self.right = right
 
 
 class Queue:
-    """class Queue which implements Queue data structure with its common methods"""
+    """ Class that holds the tree structure. """
 
     def __init__(self):
-        """Initiate class"""
+        self._dq = deque()
 
-        self.front = None
-        self.rear = None
-
-    def is_empty(self):
-        """method to check if Queue is empty"""
-
-        if self.front == None:
-            return True
-        return False
-
-
-    def enqueue(self, node):
-        """Method that takes any value as an argument and adds a new node with that value to the back of the queue """
-
-        new_node = node
-
-        if self.is_empty():
-            self.front = new_node
-            self.rear = new_node
-        else:
-            self.rear.next = new_node
-            self.rear = new_node
+    def enqueue(self, value):
+        self._dq.appendleft(value)
 
     def dequeue(self):
-        """Method that removes the node from the front of the queue, and returns the node’s value."""
-
-        if not self.is_empty():
-            temp = self.front
-            self.front = self.front.next
-            temp.next = None
-            return temp
-        else:
-            return None
+        return self._dq.pop()
 
     def peek(self):
-        """Method that returns the value of the node located in the front of the queue, without removing it from the queue."""
+        return self._dq[-1]
 
-        if not self.is_empty():
-            return self.front.value
-        return None
+    def is_empty(self):
+        return len(self._dq) == 0
 
 
 class BinaryTree:
-    """Class to create a binary tree"""
+    """Simple BinaryTree with enough functionality for breadth first adding"""
+
     def __init__(self):
         self._root = None
 
-    def pre_order(self, node=None, arr = None):
-        """Method to return an array of trre values in "pre-order" order"""
-
-        if arr is None:
-            arr = []
-
-        node = node or self._root
-
-        arr.append(node.value)
-
-        if node.left:
-            self.pre_order(node.left, arr)
-
-        if node.right:
-            self.pre_order(node.right, arr)
-
-        return arr
-
-    def in_order(self, node=None, arr = None):
-        """Method to return an array of tree values "in-order" """
-        if arr is None:
-            arr = []
-
-        node = node or self._root
-
-        if node.left:
-            self.in_order(node.left, arr)
-
-        arr.append(node.value)
-
-        if node.right:
-            self.in_order(node.right, arr)
-
-        return arr
-
-    def post_order(self, node=None, arr = []):
-        """Method to return an array of tree values "post-order" """
-
-        node = node or self._root
-
-        if node.left:
-            self.post_order(node.left, arr)
-
-        if node.right:
-            self.post_order(node.right, arr)
-
-        arr.append(node.value)
-
-        return arr
-
-    
-    def breadth_first(tree, node = None, array = None):
-        """ A method which takes a Binary Tree as its unique input, traversing the input tree using a Breadth-first approach, and returns a list of the values in the tree in the order they were encountered."""
-
-        q = Queue()
-        if array is None:
-            array = []
-        if tree._root:
-            q.enqueue(tree._root)
-
-        while q.peek():
-            node_front = q.dequeue()
-            array.append(node_front.value)
-
-            if node_front.left:
-                q.enqueue(node_front.left)
-            if node_front.right:
-                q.enqueue(node_front.right)
-
-        return array
-
-
-class BinarySearchTree(BinaryTree):
-    """Class to create a Binary Search Tree """
-
     def add(self, value):
-        """Method that accepts a value, and adds a new node with that value in the correct location in the binary search tree"""
+        """ Method to add a node to the tree
+        input value: value to add to the tree
+        output: None
+        """
 
-        node = Node(value)
+        node = _Node(value)
+
         if not self._root:
             self._root = node
             return
 
-        current = self._root
-        while True:
-            if node.value < current.value:
-                if current.left:
-                    current = current.left
-                else:
-                    current.left = node
-                    return
+        q = Queue()
+
+        q.enqueue(self._root)
+
+        while not q.is_empty():
+
+            current = q.dequeue()
+
+            if current.left:
+                q.enqueue(current.left)
             else:
-                if current.right:
-                    current = current.right
-                else:
-                    current.right = node
-                    return
+                current.left = node
+                break
 
-
-    def contains(self,value):
-        """Method that accepts a value, and returns a boolean indicating whether or not the value is in the tree at least once."""
-        current = self._root
-        while current:
-            if current.value == value:
-                return True
-            if current.value > value:
-                current = current.left
+            if current.right:
+                q.enqueue(current.right)
             else:
-                current = current.right
-        return False
+                current.right = node
+                break
 
 
+def breadth_first(root):
+    """Breadth first traversal of binary tree
+    input: root node of binary tree
+    output: list of lists of values in breadth first traversal
+    """
+    levels = []
+    if not root:
+        return levels
+
+    def helper(node, level):
+        """ method to create a list of lists of values in breadth first traversal 
+        input: node of binary tree, level of node
+        output: None
+        """
+        # start the current level and append an empty list
+        # the level starts at 0 and we add 1 during each pass
+        # after appending the current node value
+
+        if len(levels) == level:
+            levels.append([])
+
+        # append the current node value
+        levels[level].append(node.value)
+
+        # process child nodes for the next level
+        if node.left:
+            helper(node.left, level + 1)
+        if node.right:
+            helper(node.right, level + 1)
+
+    helper(root, 0)
+    print(levels)
+    return levels
+
+
+if __name__ == "__main__":
+    tree = BinaryTree()
+    tree.add(5)
+    tree.add(4)
+    tree.add(3)
+    tree.add(2)
+    tree.add(1)
+
+    breadth_first(tree._root)
+
+    print(tree._root.value)
