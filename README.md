@@ -21,5 +21,6 @@
 | Class 16  | BT Max  | [Link](data-structure-and-algorithm/data_structuers/trees/tree_max/README.md)  |
 | Class 17  | Breadth First Tree  | [Link](data-structure-and-algorithm/data_structuers/trees/tree_breadth_first/README.md)  |
 | Class 18  | Tree Fizz Buzz  | [Link](data-structure-and-algorithm/data_structuers/trees/tree_fizz_buzz/README.md)  |
+| Class 19  | Insertion Sort  | [Link](Challenges/insertion_sort/README.md)  |
 
 
