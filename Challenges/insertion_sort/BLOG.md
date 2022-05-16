@@ -112,6 +112,23 @@ In the above code, we have created a function called insertion_sort(list1). Insi
 - After that, we called the function and passed the list and printed the result.
 
 -----
+## Pseudocode
+
+```
+ InsertionSort(int[] lst)
+
+    FOR i = 1 to len(lst)
+
+      int j <-- i - 1
+      int temp <-- lst[i]
+
+      WHILE j >= 0 AND temp < lst[j]
+        lst[j + 1] <-- lst[j]
+        j <-- j - 1
+
+      lst[j + 1] <-- temp
+
+```
 
 ## Time Complexity in Insertion Sort
 
