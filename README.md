@@ -23,5 +23,6 @@
 | Class 18  | Tree Fizz Buzz  | [Link](data-structure-and-algorithm/data_structuers/trees/tree_fizz_buzz/README.md)  |
 | Class 19  | Insertion Sort  | [Link](Challenges/insertion_sort/README.md)  |
 | Class 20  | Merge Sort  | [Link](Challenges/merge_sort/README.md)  |
+| Class 21  | Hash Table  | [Link](data-structure-and-algorithm/data_structuers/hashtable/Implementation/README.md)  |
 
 
