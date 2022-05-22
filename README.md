@@ -24,5 +24,5 @@
 | Class 19  | Insertion Sort  | [Link](Challenges/insertion_sort/README.md)  |
 | Class 20  | Merge Sort  | [Link](Challenges/merge_sort/README.md)  |
 | Class 21  | Hash Table  | [Link](data-structure-and-algorithm/data_structuers/hashtable/Implementation/README.md)  |
-
+| Class 22  | Repeated Word | [Link](Challenges/repeated_word/README.md)  |
 
