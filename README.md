@@ -25,4 +25,6 @@
 | Class 20  | Merge Sort  | [Link](Challenges/merge_sort/README.md)  |
 | Class 21  | Hash Table  | [Link](data-structure-and-algorithm/data_structuers/hashtable/Implementation/README.md)  |
 | Class 22  | Repeated Word | [Link](data-structure-and-algorithm/data_structuers/hashtable/repeated_word/README.md)  |
+| Class 23  | Tree Intersection | [Link](Challenges/tree_intersection/README.md)  |
+| Class 24  | Quick Sort | [Link](Challenges/quick_sort/README.md)  |
 
