@@ -27,4 +27,5 @@
 | Class 22  | Repeated Word | [Link](data-structure-and-algorithm/data_structuers/hashtable/repeated_word/README.md)  |
 | Class 23  | Tree Intersection | [Link](Challenges/tree_intersection/README.md)  |
 | Class 24  | Quick Sort | [Link](Challenges/quick_sort/README.md)  |
+| Class 25  | Left Join | [Link](data-structure-and-algorithm/data_structuers/hashtable/left_join/README.md)  |
 
